@@ -1,5 +1,5 @@
 <launch>
-  <arg name="model" default="$(find pir2_description)/urdf/body/bottom.urdf.xacro"/>
+  <arg name="model" default="$(find pir2_description)/robots/pir2_frame.urdf.xacro"/>
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
