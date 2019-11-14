@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!--<rosparam file="$(find ubiquitous_display_control)/config/ubiquitous_display_controller.yaml" command="load"/> -->
+  <rosparam file="$(find pir2_gazebo_control)/config/head.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="/pir2" args="joint_state_controller
+					  pan_controller
+					  tilt_controller
+                                          yaw_controller"/>
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen"/>
+
+</launch>
