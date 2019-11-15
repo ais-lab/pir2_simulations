@@ -8,13 +8,28 @@ pir2:
   pan_controller:
     type: position_controllers/JointPositionController
     joint: pan_joint
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid_gains: {p: 100.0, i: 0.01, d: 10.0}
   tilt_controller:
     type: position_controllers/JointPositionController
     joint: tilt_joint
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid_gains: {p: 100.0, i: 0.01, d: 10.0}
   yaw_controller:
     type: position_controllers/JointPositionController
     joint: yaw_joint
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid_gains: {p: 100.0, i: 0.01, d: 10.0}
+
+  gazebo_ros_control:
+    pid_gains:
+      pan_joint:
+        p: 100.0
+        i: 0.01
+        d: 10.0
+      tilt_joint:
+        p: 100.0
+        i: 0.01
+        d: 10.0
+      yaw_joint:
+        p: 100.0
+        i: 0.01
+        d: 10.0
 
