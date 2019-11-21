@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://simplerooml</uri>
+      <name>simplerooml</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://table_marble</uri>
+      <name>table_marble</name>
+      <pose>-3.3 -8.7 0.648 0 0 -3.14</pose>
+    </include>
+    <include>
+      <uri>model://first_2015_trash_can</uri>
+      <name>first_2015_trash_can</name>
+      <pose>6.1 9.0 0 0 0 0</pose>
+    </include>
+	<actor name="actor">
+	 <skin>
+	    <filename>moonwalk.dae</filename>
+	    <scale>1.0</scale>
+	 </skin>
+	 <pose>0 0 0 0 0 0</pose>
+	 <animation name="walking">
+	    <filename>walk.dae</filename>
+	    <scale>1.000000</scale>
+	    <interpolate_x>true</interpolate_x>
+	 </animation>
+	 <script>
+	    <loop>true</loop>
+	    <delay_start>0.000000</delay_start>
+	    <auto_start>true</auto_start>
+	    <trajectory id="0" type="walking">
+	       <waypoint>
+		  <time>0.000000</time>
+		  <pose>8.000000 0.000000 0.000000 0.000000 0.000000 3.140000</pose>
+	       </waypoint>
+	       <waypoint>
+		  <time>0.500000</time>
+		  <pose>8.000000 0.00000 0.000000 0.000000 0.000000 3.1400000</pose>
+	       </waypoint>
+	       <waypoint>
+		  <time>1.000000</time>
+		  <pose>8.000000 0.000000 0.000000 0.000000 0.000000 3.1400000</pose>
+	       </waypoint>
+	    </trajectory>
+	 </script>
+	</actor>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>0.8 0.0 12.0 0 1.5708 0</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+  </world>
+</sdf>
